@@ -1,0 +1,8 @@
+﻿@if(isAdmin){
+<a href="demohotel" class="btn btn-danger">Delete</a>
+<a href="demohotel" class="btn btn-primary">Edit</a>
+}
+@code{
+    [Parameter]
+    public Boolean isAdmin{ get; set; }
+}

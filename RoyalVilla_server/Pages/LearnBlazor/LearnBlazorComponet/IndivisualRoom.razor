@@ -1,0 +1,35 @@
+﻿@using Model
+
+<div class="col-sm-4" style="margin-bottom:1%">
+    <div class="card">
+        <div class="card-body">
+            <div class="card-header-pills" style="font-size:large"><b>Room - @Room.Id</b></div>
+            <input type="checkbox" @onchange="RoomCheckBoxSelectionChanged" />
+            <h5 class="card-title">  @Room.RoomName</h5>
+            <p class="card-text">₹@Room.Price </p>
+            <p><input type="checkbox" @bind-value=@Room.IsActive checked="@(Room.IsActive?"checked":null)" /> Is Active</p>
+            <p>This room is @(Room.IsActive ? "Active" : "Inactive")</p>
+            @if (Room.IsActive)
+            {
+                @foreach (var item in Room.RoomProp)
+                {
+                    <p>@item.Name - @item.Value</p>
+                }
+            }
+            <EditDeleteButton isAdmin=true></EditDeleteButton>
+        </div>
+    </div>
+</div>
+@code {
+    [Parameter]
+    public BlazorRoom Room { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnRoomCheckBoxSelection { get; set; }
+
+    protected async Task RoomCheckBoxSelectionChanged(ChangeEventArgs e)
+    {
+        await OnRoomCheckBoxSelection.InvokeAsync((bool)e.Value);
+    }
+    
+}

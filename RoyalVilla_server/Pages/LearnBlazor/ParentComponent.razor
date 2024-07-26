@@ -1,0 +1,34 @@
+﻿@page "/ParentComponent"
+@using RoyalVilla_server.Pages.LearnBlazor.LearnBlazorComponet
+
+<h1 class="text-danger">Parent Child Component</h1>
+@*<ChildComponent Title="Title is pass as parent contorller">
+    Render Framwork Called
+</ChildComponent>
+*@
+<CascadingValue Value="@MessageForGrandChild">
+    <CascadingValue Value="@LuckyNum">
+        <ChildComponent @ref="childComp"
+                        OnClickbtnMethod="ShowMessage"
+                        Title="This title is pass from child component">
+            <ChildContent>Render Fragment From Parent</ChildContent>
+            <DangerChildContent>Danger Content from Rander Fragment</DangerChildContent>
+        </ChildComponent>
+        <AnotherChildComponent></AnotherChildComponent>
+    </CascadingValue>
+</CascadingValue>
+
+<div class="row">
+<button class="btn btn-primary" @onclick="()=>childComp.ShowToastrSucess()">Show Alerts</button>
+</div>
+<p><b>@messageText</b></p>
+@code {
+    private ChildComponent childComp;
+    private string MessageForGrandChild = "This is Message from grand parent";
+    private string messageText = "";
+    private int LuckyNum { get; set; } = 7;
+    private void ShowMessage(MouseEventArgs e)
+    {
+        messageText = "Blazzing text from parent";
+    }
+}

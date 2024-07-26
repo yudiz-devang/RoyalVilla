@@ -1,0 +1,23 @@
+﻿<div>
+    <h4 class="text-primary pt-3">Another Chlid Component</h4>
+    <input id="roomName" class="form-control" @attributes = "InputAttributes"  />
+</div>
+
+@code {
+    //[Parameter]
+    //public string Placeholder { get; set; } 
+
+    //[Parameter]
+    //public string Required { get; set; } = "required";
+
+    //[Parameter]
+    //public string MaxLength { get; set; } = "5";
+
+    [Parameter]
+    public Dictionary<String, Object> InputAttributes { get; set; } = new Dictionary<string, object>()
+    {
+        {"required","required"},
+        {"placeholder","Enter room number"},
+        {"maxlength",5}
+    };
+}

@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoyalVilla_server", "RoyalVilla_server\RoyalVilla_server.csproj", "{5B68156D-5EF3-45AC-80B7-3339C6842CE6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAcess", "DataAcess\DataAcess.csproj", "{916D5D52-11E8-4567-8F74-33AF09FEABBA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{F613863D-5A13-4323-BDE9-21E6FC72BE2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{A9FBC293-9087-45AA-BD89-11987411C4CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{872A6A23-2C59-4A5E-9894-DB3ABB1A2E02}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoyalVilla_API", "RoyalVilla_API\RoyalVilla_API.csproj", "{8B1F48BE-8399-4C4B-AA7B-B3731FC2D96E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoyalVilla_Client", "RoyalVilla_Client\RoyalVilla_Client.csproj", "{011EBF8F-ED6F-4005-A495-677B4E6399F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B68156D-5EF3-45AC-80B7-3339C6842CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B68156D-5EF3-45AC-80B7-3339C6842CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B68156D-5EF3-45AC-80B7-3339C6842CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B68156D-5EF3-45AC-80B7-3339C6842CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{916D5D52-11E8-4567-8F74-33AF09FEABBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{916D5D52-11E8-4567-8F74-33AF09FEABBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{916D5D52-11E8-4567-8F74-33AF09FEABBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{916D5D52-11E8-4567-8F74-33AF09FEABBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F613863D-5A13-4323-BDE9-21E6FC72BE2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F613863D-5A13-4323-BDE9-21E6FC72BE2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F613863D-5A13-4323-BDE9-21E6FC72BE2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F613863D-5A13-4323-BDE9-21E6FC72BE2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9FBC293-9087-45AA-BD89-11987411C4CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9FBC293-9087-45AA-BD89-11987411C4CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9FBC293-9087-45AA-BD89-11987411C4CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9FBC293-9087-45AA-BD89-11987411C4CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{872A6A23-2C59-4A5E-9894-DB3ABB1A2E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{872A6A23-2C59-4A5E-9894-DB3ABB1A2E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{872A6A23-2C59-4A5E-9894-DB3ABB1A2E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{872A6A23-2C59-4A5E-9894-DB3ABB1A2E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1F48BE-8399-4C4B-AA7B-B3731FC2D96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1F48BE-8399-4C4B-AA7B-B3731FC2D96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1F48BE-8399-4C4B-AA7B-B3731FC2D96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1F48BE-8399-4C4B-AA7B-B3731FC2D96E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{011EBF8F-ED6F-4005-A495-677B4E6399F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{011EBF8F-ED6F-4005-A495-677B4E6399F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{011EBF8F-ED6F-4005-A495-677B4E6399F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{011EBF8F-ED6F-4005-A495-677B4E6399F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEA6F08B-52BA-43DB-A584-92C08A1BAFBF}
+	EndGlobalSection
+EndGlobal

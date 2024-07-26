@@ -1,0 +1,98 @@
+﻿@page "/login"
+@using Microsoft.AspNetCore.Authentication;
+@using System.Web;
+@inject IAuthenticationServices authenticationService
+@inject NavigationManager navigationManager
+
+
+@*
+<form>
+    <input id="email" placeholder="Email..." class="form-control mb-2" />
+    <input type="password" placeholder="Password..." id="password" class="form-control mb-2" />
+
+    <button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+
+    <a href="/registration"
+       class="btn btn-primary text-white mt-3"><i class="fas fa-user-plus"></i> Register as a new user</a>
+</form>
+*@
+
+
+
+<EditForm Model="UserForAuthentication" OnValidSubmit="LoginUser" class="pt-4">
+    <div class="py-4">
+        <div class=" row form-group ">
+            <div class="col-6 offset-3 ">
+                <div class="card border">
+                    <div class="card-body px-lg-5 pt-4">
+                        <h3 class="col-12 text-success text-center py-2">
+                            <strong>Sign In</strong>
+                        </h3>
+
+                        <hr style="background-color:aliceblue" />
+                        <div class="py-2">
+                            <InputText @bind-Value="UserForAuthentication.UserName" id="email" placeholder="Email..." class="form-control mb-2" />
+
+                        </div>
+                        <div class="py-2">
+                            <InputText @bind-Value="UserForAuthentication.Password" type="password" placeholder="Password..." id="password" class="form-control mb-2" />
+
+                        </div>
+                        <hr style="background-color:aliceblue" />
+                        <div class="py-2">
+                            @if (Isprocessing)
+                            {
+                                <button type="submit" class="btn btn-success btn-block disabled"><i class="fas fa-sign-in-alt"></i>Please wait....</button>
+                            }
+                            else
+                            {
+                                <button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+                            }
+                        </div>
+                        <div class="py-2">
+                            <a href="/registration"
+                               class="btn btn-primary text-white mt-3"><i class="fas fa-user-plus"></i> Register as a new user</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</EditForm>
+
+@code {
+    private AuthenticationDTO UserForAuthentication = new AuthenticationDTO();
+    public bool Isprocessing { get; set; }
+    public bool ShowAuthenticationErrors { get; set; }
+    public string Errors { get; set; }
+    public string ReturnUrl { get; set; }
+
+    private async Task LoginUser()
+    {
+        ShowAuthenticationErrors = false;
+        Isprocessing = true;
+        var result = await authenticationService.Login(UserForAuthentication);
+        if (result.IsAuthSuccessful)
+        {
+            Isprocessing = false;
+            var absoluteUri = new Uri(navigationManager.Uri);
+            var queryParam = HttpUtility.ParseQueryString(absoluteUri.Query);
+            ReturnUrl = queryParam["returnUrl"];
+            if (string.IsNullOrEmpty(ReturnUrl))
+            {
+                navigationManager.NavigateTo("/");
+            }
+            else
+            {
+                navigationManager.NavigateTo("/" + ReturnUrl);
+            }
+        }
+        else
+        {
+            Isprocessing = false;
+            Errors = result.Errors;
+            ShowAuthenticationErrors = true;
+        }
+    }
+}

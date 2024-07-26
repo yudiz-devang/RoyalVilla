@@ -1,0 +1,32 @@
+﻿@using Model
+<div class="col-sm-4" style="margin-bottom:1%">
+    <div class="card">
+        <div class="card-body" @onclick="(args)=> AmenitySelectionChanged(args,Amenitie.Name)">
+            
+            <div class="card-header-pills" style="font-size:large"><b>Room - @Amenitie.Id</b></div>
+            <h5 class="card-title">@Amenitie.Name</h5>
+            <p class="card-text">@Amenitie.Description</p>
+            RF from parent - @FirstFragment @SecondFragment
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public BlazorAmenitie Amenitie { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnAmenitySelection { get; set; }
+
+
+    [Parameter]
+    public RenderFragment FirstFragment { get; set; }
+    [Parameter]
+    public RenderFragment SecondFragment { get; set; }
+
+
+    protected async Task AmenitySelectionChanged(MouseEventArgs e, string name)
+    {
+        await OnAmenitySelection.InvokeAsync(name);
+    }
+}
